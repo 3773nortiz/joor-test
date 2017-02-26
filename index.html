@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="joor-test">
+	<head>
+		<title>JOOR Test</title>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta content="" name="joor-test-trial" />
+		<meta content="" name="ellen" />
+
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/css/custom.css">
+		
+	</head>
+
+	<body> 
+	
+		<div id="app" class="container-fluid container-fullw">
+			<div ui-view></div>
+		</div>
+
+		<!-- SCRIPTS LIBRARY -->
+		<script src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		<!-- ANGULAR -->
+		<script src="bower_components/angular/angular.js"></script>
+	    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+	    <!-- ANGULAR CUSTOM SCRIPTS -->
+		<script src="app/app.js"></script>
+	    <script src="app/app.constant.js"></script>
+
+	    <!-- common services -->
+	    <script src="app/app.config.js"></script>
+
+	    <!-- directives -->
+    	<script src="app/directives/itunes/itunesLoader.js"></script>
+    	<script src="app/directives/itunes/collectionLoader.js"></script>
+
+	    <!-- Angular App Controller -->
+	    <script src="app/controller/music/controller.js"></script>
+	    <script src="app/controller/collection/controller.js"></script>
+	
+
+	</body>
+</html>

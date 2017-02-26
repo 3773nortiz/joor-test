@@ -1,0 +1,54 @@
+<div id="music" class="container" ng-controller="MusicController">
+	<div class="row">
+		<div class="page-header">
+			<h2 class="text-center text-info"><i class="glyphicon glyphicon-music text-info"></i> &nbsp;&nbsp;Music Search</h2>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-12 col-sm-12"> 
+			<div class="input-group input-group-md">
+			  <span class="input-group-addon" id="sizing-addon1"><i class="glyphicon glyphicon-search text-info"></i></span>
+			  <input type="text" class="form-control" ng-model="itunesQuery" placeholder="Search" aria-describedby="sizing-addon1">
+			</div>
+		</div>
+	</div>
+
+
+	<itunes-loader itunes-query="itunesQuery" itunes-callback="'itunesCallback'" 
+	itunes-controller="'MusicController'"></itunes-loader>
+	<br/><br/>
+
+	<audio id="audio" ng-src="{{ trustAsResourceUrl(currentPlayedUrl) }}"></audio>
+	<div class="row music-container-list">
+		<div class="col-md-12">
+			<div class="panel panel-default" ng-repeat="songList in results.results" ng-click="">
+			  <div class="panel-body music-lists">	
+			  	 <div class="col-md-2">
+			  	 	<a href="#" class="">
+				      	<img class="boxes" ng-src="{{ songList.artworkUrl100 }}">
+						<div class="overlay {{ $index }}" ng-click="playAudio($event, songList, $index)">
+							<i class="glyphicon glyphicon-play"></i>
+						</div>
+				    </a>
+			  	 </div>
+			  	 <div class="col-md-7 titles padding-left-0">
+			  	 	<h3><span>Song Title:</span> <small> {{ songList.trackName }}</small></h3>
+			  	 	<h3><span>Artist Name:</span> <small>{{ songList.artistName }}</small></h3>
+			  	 	<h3><span>Collection Name:</span> <small><a ui-sref="collection({ id: songList.collectionId })">{{ songList.collectionName }}</a></small></h3>
+
+			  	 </div>
+			  	 <div class="col-md-3 prices">
+			  	 	<h3><span>Track Price:</span> <small> ${{ songList.trackPrice }} {{ songList.currency}} </small></h3>
+			  	 	<h3><span>Genre:</span> <small> {{ songList.primaryGenreName }} </small></h3>
+			  	 </div>
+
+			  </div>
+			</div>
+
+
+
+		</div>
+	</div>
+
+</div>

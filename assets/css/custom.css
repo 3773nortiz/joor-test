@@ -1,0 +1,124 @@
+/*@import url('custom.header.css');
+@import url('custom.breadcrumb.css');
+@import url('custom.contacts.css');
+@import url('custom.summary.css');
+@import url('custom.modal.css');
+*/
+
+/*GENERAL*/
+.padding-left-0 {
+	padding-left: 0px;
+}
+.padding-right-0 {
+	padding-right: 0px;
+}
+.margin-top-0 {
+	margin-top: 0px;
+}
+.margin-bottom-0 {
+	margin-bottom: 0px;
+}
+.pointer {
+	cursor: pointer;
+}
+
+.table > tbody > tr:first-child >td {
+	border-top: 1px solid transparent !important;
+}
+
+.back-menu {
+	position: fixed;
+    transform: rotate(90deg);
+    top: 50%;
+    bottom: 50%;
+    left: 0;
+    text-align: center;
+    padding: 0px;
+}
+
+.back-menu a {
+	background-color: rgba(68, 66, 66, 0.78);
+    padding: 12px 12px;
+    border-radius: 5px 5px 0px 0px;
+    color: #FFF;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+#collection {
+    padding-top: 50px;
+}
+
+#collection #header-album {
+    padding-bottom: 20px;
+}
+
+#collection .music-list {
+	margin-top: 10px;
+	max-height: 500px;
+    height: 100%;
+    overflow: auto;
+}
+
+#collection .album-desc {
+	padding-left: 30px;
+}
+
+
+#music .music-lists .titles span,
+#music .music-lists .prices span{
+	font-size: 14px;
+}
+
+#music .music-lists .overlay {
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    width: 100px;
+    height: 100%;
+
+    display: block;
+    position: absolute;
+    z-index: 20;
+    /*background: rgba(0, 0, 0, 0.8);*/
+    background: rgba(0, 0, 0, 0.53);
+    overflow: hidden;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+
+#music .music-lists .overlay i {
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin: auto 0 auto -30px;
+    display: block;
+    position: absolute;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    border: solid 2px #fff;
+    text-align: center;
+    color: #fff;
+    line-height: 55px;
+    font-weight: 700;
+    font-size: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -ms-border-radius: 30px;
+    -o-border-radius: 30px;
+    border-radius: 30px;
+}
+
+#music .music-lists .titles h3,
+#music .music-lists .prices h3 {
+	margin-top: 0px !important;
+}
+
+#music .music-container-list {
+	max-height: 70vh;
+    height: 100%;
+    overflow: auto;
+}

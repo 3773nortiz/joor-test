@@ -1,0 +1,53 @@
+<div class="back-menu">
+	<a ui-sref="music">BACK</a>
+</div>
+<div id="collection" class="container" ng-controller="CollectionController">
+	<div class="row page-header margin-top-0 margin-bottom-0" id="header-album">
+		<div class="col-md-12">
+			<div class="col-md-1 padding-left-0">
+				<img ng-src="{{ collection_results[0].artworkUrl100 }}" />
+			</div>
+			<div class="col-md-11 album-desc">
+				<h3 class="margin-top-0 margin-bottom-0">{{ collection_results[0].collectionName }}</h3>
+				<h3 class="margin-top-0 margin-bottom-0"> <small><b>Artist:</b> {{ collection_results[0].artistName }}</small></h3>
+				<h3 class="margin-top-0 margin-bottom-0"> <small><b>Collection Type:</b> {{ collection_results[0].collectionType }}</small></h3>
+				<h3 class="margin-top-0 margin-bottom-0"> <small><b>Genre:</b> {{ collection_results[0].primaryGenreName }}</small></h3>
+			</div>
+		</div>
+	</div>
+
+	<div class="row music-list">
+		<table class="table">
+		  <tr ng-repeat="collection_result in collection_results" ng-if="$index != 0">
+		  	<td width="5%">
+		  		<img ng-src="{{ collection_result.artworkUrl30 }}"/>
+		  	</td>
+		  	<td width="90%">
+
+		  		<h4 class="margin-top-0">
+		  			<small>{{ collection_result.trackNumber }}</small>
+		  			&nbsp;&nbsp;&nbsp;
+		  			<small class="pointer"><i class="glyphicon glyphicon-play"></i></small>
+		  			&nbsp;&nbsp;&nbsp;
+		  			<small><b>{{ collection_result.trackName }}</b></small>
+		  		</h4>
+		  	</td>
+		  	<td width="5%">
+		  		<h4 class="margin-top-0"><small>{{ collection_result.trackTimeMillis | formatDuration }}</small></h4>
+		  	</td>
+		  </tr>
+		</table>
+	</div>
+	<div class="row" ng-if="collection_results.length == 0">
+		No results found..
+	</div>
+	<div class="row">
+		<h1 class="page-header margin-top-0"></h1>
+		<h4><small>{{ collection_results[0].trackCount }} Songs, {{ totalTime | formatDuration }} Total Time</small></h4>
+		<small>{{ collection_results[0].copyright }}<small>
+	</div>
+
+	<collection-loader itunes-collection-query="itunesCollectionQuery" itunes-collection-callback="'itunesCollectionCallback'" itunes-controller="'CollectionController'"></collection-loader>
+
+</div>
+
