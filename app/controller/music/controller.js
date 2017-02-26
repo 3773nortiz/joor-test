@@ -50,15 +50,20 @@
                 audio.load();
                 $timeout(function () {
                     audio.play();
+
+                    $($($event.currentTarget)[0].childNodes[1]).removeClass('glyphicon-play'); 
+                    $($($event.currentTarget)[0].childNodes[1]).addClass('glyphicon-pause'); 
                 }, 0);
+
                 $('.boxes').removeClass('clicked');
                 $($event.currentTarget).addClass('clicked');
-                $($($event.currentTarget)[0].childNodes[1]).addClass('glyphicon-pause'); 
             }  else {
                 audio.pause();
 
                 $($event.currentTarget).removeClass('clicked');
-                ($($event.currentTarget)[0].childNodes[1]).removeClass('glyphicon-pause');
+
+                $($($event.currentTarget)[0].childNodes[1]).removeClass('glyphicon-pause');
+                $($($event.currentTarget)[0].childNodes[1]).addClass('glyphicon-play'); 
             }
         };
     }
