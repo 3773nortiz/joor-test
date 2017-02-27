@@ -24,24 +24,34 @@
 		<div class="col-md-12">
 			<div class="panel panel-default" ng-repeat="songList in results.results" ng-click="">
 			  <div class="panel-body music-lists">	
-			  	 <div class="col-md-2">
-			  	 	<a href="#" class="">
-				      	<img class="boxes" ng-src="{{ songList.artworkUrl100 }}">
-						<div class="overlay {{ $index }}" ng-click="playAudio($event, songList, $index)">
-							<i class="glyphicon glyphicon-play"></i>
-						</div>
-				    </a>
-			  	 </div>
-			  	 <div class="col-md-7 titles padding-left-0">
-			  	 	<h3><span>Song Title:</span> <small> {{ songList.trackName }}</small></h3>
-			  	 	<h3><span>Artist Name:</span> <small>{{ songList.artistName }}</small></h3>
-			  	 	<h3><span>Collection Name:</span> <small><a ui-sref="collection({ id: songList.collectionId })">{{ songList.collectionName }}</a></small></h3>
 
-			  	 </div>
-			  	 <div class="col-md-3 prices">
-			  	 	<h3><span>Track Price:</span> <small> ${{ songList.trackPrice }} {{ songList.currency}} </small></h3>
-			  	 	<h3><span>Genre:</span> <small> {{ songList.primaryGenreName }} </small></h3>
-			  	 </div>
+				<div class="row">
+				  	 <div class="col-md-2 col-xs-5 col-sm-2 album">
+				  	 	<a href="#" class="">
+					      	<img class="boxes" ng-src="{{ songList.artworkUrl100 }}">
+							<div class="overlay {{ $index }}" ng-click="playAudio($event, songList)">
+								<i class="glyphicon glyphicon-play"></i>
+							</div>
+					    </a>
+				  	 </div>
+
+				  	 <div class="col-md-8 col-xs-4 col-sm-8 titles padding-left-0">
+				  	 	<h4 class="song-title"><small> <b>{{ songList.trackName }}</b></small></h4>
+				  	 	<h4 class="details"><small>{{ songList.artistName }}</small></h4>
+				  	 	<h4 class="details"><small><a ui-sref="collection({ id: songList.collectionId })">{{ songList.collectionName }}</a></small></h4>
+
+				  	 </div>
+				  	 <div class="col-md-2 col-xs-3 col-sm-2 prices">
+					  	 <div class="text-right">
+					  	 	<h4>
+					  	 		<small> ${{ songList.trackPrice }} </small>
+					  	 	</h4>
+					  	 	<h4 class="break-word">
+					  	 		<small> {{ songList.primaryGenreName }} </small>
+					  	 	</h4>
+					  	 </div>
+					</div>
+				</div>
 
 			  </div>
 			</div>

@@ -43,8 +43,18 @@
          */
         function _Link(scope, element, attrs) {
             var ele;
+            var reQueryTimeout = null;
             scope.$watch('query', function () {
+              // if (reQueryTimeout) {
+              //   clearTimeout(reQueryTimeout);
+              // }
 
+              // reQueryTimeout = setTimeout(function () {
+                reQuery();
+              // }, 1000);
+            });
+
+            var reQuery = function () {
               ele = element.contents().remove();
               window.itunesScope = angular.element(document.querySelector('[ng-controller=' + scope.controller + ']')).scope();
               
@@ -55,7 +65,7 @@
               element.append(script);
               
               $compile(element.contents())(scope);
-            });
+            }
         }
 
     }

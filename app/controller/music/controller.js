@@ -18,24 +18,21 @@
         $scope.itunesCollectionQuery = $stateParams.id;
         $scope.itunesScript = '';
         $scope.results = [];
-        $scope.collection_results = [];
         $scope.currentPlayedUrl = '';
 
         console.log($stateParams);
 
         $scope.itunesCallback = function (response) {
             var tmp = [];
-            // $scope.results = [];
             tmp.push(response);
             $scope.results = tmp[0];
-            console.log($scope.results);
+            $scope.$digest($scope.results);
         }
 
         $scope.itunesCollectionCallback = function (response) {
             var tmp_collection = [];
             tmp_collection.push(response);
             $scope.collection_results = tmp_collection[0];
-            console.log($scope.collection_results);
         }
 
         $scope.trustAsResourceUrl = function (url) {
@@ -45,26 +42,27 @@
         }
 
         $scope.playAudio = function($event, song) {
-            if (!$($event.currentTarget).hasClass('clicked')) {
+            if ($($($event.currentTarget)[0].childNodes[1]).hasClass('glyphicon-play')) {
                 $scope.currentPlayedUrl = song.previewUrl;
                 audio.load();
                 $timeout(function () {
                     audio.play();
 
-                    $($($event.currentTarget)[0].childNodes[1]).removeClass('glyphicon-play'); 
-                    $($($event.currentTarget)[0].childNodes[1]).addClass('glyphicon-pause'); 
+                    $('.boxes + .overlay > .glyphicon').removeClass('glyphicon-pause').addClass('glyphicon-play');
+                    $($($event.currentTarget)[0].childNodes[1]).removeClass('glyphicon-play').addClass('glyphicon-pause');
                 }, 0);
-
-                $('.boxes').removeClass('clicked');
-                $($event.currentTarget).addClass('clicked');
             }  else {
                 audio.pause();
 
                 $($event.currentTarget).removeClass('clicked');
-
-                $($($event.currentTarget)[0].childNodes[1]).removeClass('glyphicon-pause');
-                $($($event.currentTarget)[0].childNodes[1]).addClass('glyphicon-play'); 
+                $($($event.currentTarget)[0].childNodes[1]).removeClass('glyphicon-pause').addClass('glyphicon-play');
             }
+
+            audio.addEventListener("ended", function(){
+                 audio.currentTime = 0;
+                 
+                $($($event.currentTarget)[0].childNodes[1]).removeClass('glyphicon-pause').addClass('glyphicon-play');
+            });
         };
     }
     

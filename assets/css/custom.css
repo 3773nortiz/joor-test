@@ -9,15 +9,31 @@
 .padding-left-0 {
 	padding-left: 0px;
 }
+
 .padding-right-0 {
 	padding-right: 0px;
 }
+
+.padding-left-40 {
+    padding-left: 40px;
+}
+
 .margin-top-0 {
 	margin-top: 0px;
 }
+
 .margin-bottom-0 {
 	margin-bottom: 0px;
 }
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.font-size-20 {
+    font-size: 20px;
+}
+
 .pointer {
 	cursor: pointer;
 }
@@ -26,6 +42,9 @@
 	border-top: 1px solid transparent !important;
 }
 
+.break-word {
+    word-break: break-all;
+}
 .back-menu {
 	position: fixed;
     transform: rotate(90deg);
@@ -64,6 +83,18 @@
 	padding-left: 30px;
 }
 
+#music h4,
+#music h3 {
+    margin-top: 0px !important;
+}
+
+#music .album {
+    margin-top: 8px;
+}
+
+#music .song-title {
+    font-size: 24px;
+}
 
 #music .music-lists .titles span,
 #music .music-lists .prices span{
@@ -121,4 +152,49 @@
 	max-height: 70vh;
     height: 100%;
     overflow: auto;
+}
+
+@media (min-width: 768px) { 
+    .titles {
+        padding-left: 10px;
+    }
+}
+
+/* Small devices (tablets, 768px and below) */
+@media (max-width: 400px) { 
+    .prices {
+        padding-left: 0px;
+    }
+    .album {
+        padding-left: 10px;
+    }
+    .titles {
+        padding-right: 0px;
+    }
+    #music .music-lists .overlay {
+        left: 10px;
+    }
+    
+    #music .song-title {
+        font-size: 18px;
+    }
+
+    #music .details {
+        font-size: 16px;
+    }
+
+    .prices h4 {
+        font-size: 16px;
+    }
+ }
+
+
+ @media (max-width: 350px) { 
+    .titles {
+        padding-left: 10px !important;
+    }
+
+    .prices {
+        padding-right: 10px !important;
+    }
 }
