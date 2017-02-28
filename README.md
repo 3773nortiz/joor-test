@@ -8,12 +8,9 @@ Built with Angular JS 1.3
 * Search Music
 * Music Collection
 
-
 ## Requirements
 
 * [Node JS](https://nodejs.org/en/)
-* [MAMP, XAMP, WAMPP, LAMP](Local Servers)
-* [Bower](https://bower.io/)
 * [NPM](https://docs.npmjs.com/getting-started/installing-node)
 
 ## Installation
