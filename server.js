@@ -2,8 +2,10 @@ var express = require('express');
 var opn = require('opn');
 var app = express();
 
-app.listen(9090);
-console.log("App listening on port 9090");
+const PORT = 9090;
+
+app.listen(PORT);
+console.log("App listening on port " + PORT);
 
 app.use('/bower_components', express.static('bower_components'));
 app.use('/app', express.static('app'));
@@ -13,4 +15,4 @@ app.get('*', function(req, res) {
     res.sendFile(__dirname + '/index.html'); // load the single view file (angular will handle the page changes on the front-end)
 });
 
-opn('http://localhost:9090')
+opn('http://localhost:' + PORT);

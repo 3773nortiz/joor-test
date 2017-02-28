@@ -30,6 +30,6 @@ describe('Music list', function() {
 
 		browser.wait(EC.urlContains('collection'), 2000);
 
-		expect(browser.getCurrentUrl()).toEqual('http://localhost:8080/#/collection/1161503945');
+		expect(browser.getCurrentUrl()).toEqual('http://localhost:9090/#/collection/1161503945');
 	});
 });
