@@ -18,12 +18,15 @@ Built with Angular JS 1.3
 
 ## Installation
 
-1. Clone from `git@github.com:3773nortiz/joor-test.git`
-2. Install bower globally `npm install -g bower`
-3. Put all the files on a local server `(MAMP, XAMP, LAMP, WAMP)`
-5. Run `bower install` in the root directory of the project
- 
+1. Clone from `git@github.com:3773nortiz/joor-test.git` to your project directory.
+2. Go to your project directory in **terminal or cmd type**`cd /project/directory/`.
+3. Run `npm install` in the root directory of the project.
+
 
 ## Serving the app
+1. Run `npm start` in your project directory.
 
-**Open `"http://localhost/joor-test/"` in browser
+## Tests 
+1. Run `./webdriver-manager start` in another tab.
+2. Run `npm test` in your project directory but in another tab.
+

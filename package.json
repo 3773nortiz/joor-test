@@ -1,0 +1,27 @@
+{
+  "name": "joor",
+  "version": "1.0.0",
+  "description": "Seach Music and show collection",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.14.1",
+    "jasmine": "^2.5.3",
+    "opn": "^4.0.2",
+    "protractor": "^5.1.1"
+  },
+  "scripts": {
+    "test": "./node_modules/protractor/bin/protractor protractor.conf.js",
+    "postinstall": "sudo ./webdriver-manager update && ./node_modules/bower/bin/bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3773nortiz/joor-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/3773nortiz/joor-test/issues"
+  },
+  "homepage": "https://github.com/3773nortiz/joor-test#readme"
+}

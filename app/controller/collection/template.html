@@ -18,25 +18,25 @@
 	<audio id="audio1" ng-src="{{ trustAsResourceUrl(currentPlayedUrl) }}"></audio>
 	<div class="row music-list">	
 		<table class="table">
-		  <tr ng-repeat="collection_result in collection_results" ng-if="$index != 0">
-		  	<td width="3%">
-		  		<h4 class="margin-bottom-0 margin-top-0 boxes">
-		  			<small class="pointer"><i class="text-info font-size-20 glyphicon glyphicon-play" 
-		  			ng-click="playAudio($event, collection_result)"></i>
-		  			</small>
-		  		</h4>
-		  	</td>
-		  	<td width="90%">
-		  		<h4 class="margin-top-0">
-		  			<small>{{ collection_result.trackNumber }}</small>
-		  			&nbsp;&nbsp;&nbsp;
-		  			<small><b>{{ collection_result.trackName }}</b></small>
-		  		</h4>
-		  	</td>
-		  	<td width="5%">
-		  		<h4 class="margin-top-0"><small>{{ collection_result.trackTimeMillis | formatDuration }}</small></h4>
-		  	</td>
-		  </tr>
+		  	<tr ng-repeat="collection_result in collection_results" ng-if="$index != 0">
+			  	<td width="3%">
+			  		<h4 class="margin-bottom-0 margin-top-0 boxes">
+			  			<small class="pointer"><i class="text-info font-size-20 glyphicon glyphicon-play" 
+			  			ng-click="playAudio($event, collection_result)"></i>
+			  			</small>
+			  		</h4>
+			  	</td>
+			  	<td width="90%">
+			  		<h4 class="margin-top-0">
+			  			<small>{{ collection_result.trackNumber }}</small>
+			  			&nbsp;&nbsp;&nbsp;
+			  			<small><b>{{ collection_result.trackName }}</b></small>
+			  		</h4>
+			  	</td>
+			  	<td width="5%">
+			  		<h4 class="margin-top-0"><small>{{ collection_result.trackTimeMillis | formatDuration }}</small></h4>
+			  	</td>
+		  	</tr>
 		</table>
 	</div>
 	<div class="row" ng-if="collection_results.length == 0">

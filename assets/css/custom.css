@@ -45,20 +45,21 @@
 .break-word {
     word-break: break-all;
 }
+
 .back-menu {
-	position: fixed;
-    transform: rotate(90deg);
-    top: 50%;
-    bottom: 50%;
+    position: fixed;
+    /* transform: rotate(180deg); */
+    top: 10px;
+    /* bottom: 50%; */
     left: 0;
     text-align: center;
-    padding: 0px;
+    padding: 0px
 }
 
 .back-menu a {
-	background-color: rgba(68, 66, 66, 0.78);
-    padding: 12px 12px;
-    border-radius: 5px 5px 0px 0px;
+    background-color: rgba(68, 66, 66, 0.78);
+    padding: 10px 10px;
+    border-radius: 0px 0px 5px 0px;
     color: #FFF;
     font-weight: bolder;
     text-decoration: none;

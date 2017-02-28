@@ -45,13 +45,13 @@
             var ele;
             var reQueryTimeout = null;
             scope.$watch('query', function () {
-              // if (reQueryTimeout) {
-              //   clearTimeout(reQueryTimeout);
-              // }
+              if (reQueryTimeout) {
+                clearTimeout(reQueryTimeout);
+              }
 
-              // reQueryTimeout = setTimeout(function () {
+              reQueryTimeout = setTimeout(function () {
                 reQuery();
-              // }, 1000);
+              }, 500);
             });
 
             var reQuery = function () {
